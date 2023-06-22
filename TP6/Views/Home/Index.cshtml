@@ -1,11 +1,34 @@
 ﻿<body>
     <header>
         <nav>
-            <a href='@Url.Action("Index")'><img src="/img/banderaArg.webp"></a>
-        </nav>
-        <nav>
+            <a href='@Url.Action("Index")'><img src="/img/banderaArg.webp" style="width:100px"></a>
             <a href='@Url.Action("Elecciones")'>Elecciones</a>
             <a href='@Url.Action("Creditos")'>Créditos</a>
         </nav>
     </header>
+    <article>
+    <div class = "cards">
+
+    <a href='@Url.Action("VerDetallePartido", new { idPartido = 1})'>
+    <div class="card">
+        <img src="/img/Candidatos/Massa.jpg" alt="Massa" style="width:200px">
+        <div class="container">
+            <h4><b>Frente De Todos</b></h4>
+            <p>Massa Sergio</p>
+        </div>
+    </div>
+    </a>
+
+    <a href='@Url.Action("VerDetallePartido", new { idPartido = 2})'>
+    <div class="card">
+        <img src="/img/Candidatos/Larreta.jpg" alt="Massa" style="width:200px">
+        <div class="container">
+            <h4><b>Juntos Por El Cambio</b></h4>
+            <p>Horacio Rodríguez Larreta</p>
+        </div>
+    </div>
+    </a>
+
+    </div>
+    </article>
 </body>

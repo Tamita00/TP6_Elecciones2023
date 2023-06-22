@@ -11,13 +11,13 @@ public class HomeController : Controller
     }
     public IActionResult VerDetallePartido(int idPartido)
     { 
-        ViewBag.detallePArtido = BD.VerInfoPartido(idPartido);
-        return View("DetallePartido");
+        ViewBag.detallePartido = BD.VerInfoPartido(idPartido);
+        return View("VerDetallePartido");
     }
     public IActionResult VerDetalleCandidato(int idCandidato)
     { 
         ViewBag.detalleCandidato = BD.VerInfoCandidato(idCandidato);
-        return View("DetalleCandidato");
+        return View("VerDetalleCandidato");
     }
     public IActionResult AgregarCandidato(int idPartido)
     { 

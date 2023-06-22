@@ -1,0 +1,20 @@
+<body>
+    <header>
+        <nav>
+            <a href='@Url.Action("Index")'><img src="/img/banderaArg.webp" style="width:100px"></a>
+            <a href='@Url.Action("Elecciones")'>Elecciones</a>
+            <a href='@Url.Action("Creditos")'>Créditos</a>
+        </nav>
+    </header>
+    <article>
+    <p>Nombre: @ViewBag.detallePartido.Nombre</p>
+    <img src = "\img\Logos\@ViewBag.detallePartido.Logo" width="200px">
+    <p>SitioWeb: @ViewBag.detallePartido.SitioWeb</p>
+    <p>FechaFundacion: @ViewBag.detallePartido.FechaFundacion</p>
+    <p>CantidadDiputados: @ViewBag.detallePartido.CantidadDiputados</p>
+    <p>CantidadSenadores: @ViewBag.detallePartido.CantidadSenadores</p>
+
+    <a href='@Url.Action("AgregarCandidato")'>Agregar Candidato</a>
+
+    </article>
+</body>
