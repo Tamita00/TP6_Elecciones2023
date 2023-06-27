@@ -10,11 +10,12 @@
     
     <form method="post" action = '@Url.Action("GuardarCandidato")'>
         <input type="hidden" name = "IdPartido" value = "@ViewBag.idPartido">
-        <input type="file" name="Foto">
+        <input type="text" name="Foto">
         <input type="text" name = "Apellido">
         <input type="text" name = "Nombre">
         <input type="date" name = "FechaNacimiento">
         <input type="text" name = "Postulacion">
+        <input type="submit" value="Subir">
     </form>
     
     </article>

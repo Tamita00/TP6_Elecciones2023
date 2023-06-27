@@ -8,7 +8,7 @@ public class BD{
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
             string sql = "INSERT INTO Candidato(IDCandidato, IdPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion) VALUES (@pIDCandidato, @pIdPartido, @pApellido, @pNombre, @pFechaNacimiento, @pFoto, @pPostulacion)";
-            db.Execute(sql, new { pIDCandidato = candidato.IdCandidato, pIdPartido = candidato.IdPartido, pApellido =candidato.Apellido, pNombre = candidato.Nombre, pFechaNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion });
+            db.Execute(sql, new { pIDCandidato = candidato.IdCandidato, pIdPartido = candidato.IdPartido, pApellido = candidato.Apellido, pNombre = candidato.Nombre, pFechaNacimiento = candidato.FechaNacimiento, pFoto = candidato.Foto, pPostulacion = candidato.Postulacion });
         }    
     }
     public static void EliminarCandidato(int idCandidato){
@@ -45,12 +45,12 @@ public class BD{
         }
         return listaPartidos;
     }
-    public static List<Candidato> ListarCandidatos(){
+    public static List<Candidato> ListarCandidatos(int IdPartido){
         List <Candidato> listaCandidatos = new List<Candidato>();
         using (SqlConnection db = new SqlConnection(ConnectionString))
         {
-            string sql = "SELECT * FROM Partido";
-            listaCandidatos = db.Query<Candidato>(sql).ToList();
+            string sql = "SELECT * FROM Candidato WHERE IdPartido = @IdPartido";
+            listaCandidatos = db.Query<Candidato>(sql, new {IdPartido = IdPartido}).ToList();
         }
         return listaCandidatos;
     }

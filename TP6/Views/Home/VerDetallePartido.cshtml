@@ -16,18 +16,19 @@
 
     @for (int i = 0; i < ViewBag.detalleCandidato.Count; i++)
     {
-        <a href='@Url.Action("VerDetalleCandidato", new { idCandidato = ViewBag.detalleCandidato[i].IdCandidato})'>
+        
     <div class="card">
         <img src="@ViewBag.detalleCandidato[i].Foto" alt="@ViewBag.detalleCandidato[i].Nombre" style="width:200px">
         <div class="container">
             <h4><b>@ViewBag.detalleCandidato[i].Nombre</b></h4>
-            <a href='@Url.Action("EliminarCandidato", new { IdPartido = ViewBag.detalleCandidato[i].IdPartido})'>Eliminar Candidato</a>
+            <a href='@Url.Action("VerDetalleCandidato", new { idCandidato = ViewBag.detalleCandidato[i].IdCandidato})'>Ver más</a><br>
+            <a href='@Url.Action("EliminarCandidato", new { idCandidato = ViewBag.detalleCandidato[i].IdCandidato, idPartido = @ViewBag.detallePartido.IdPartido})'>Eliminar Candidato</a>
         </div>
     </div>
-    </a>        
+           
     }
 
-    <a href='@Url.Action("AgregarCandidato")'>Agregar Candidato</a>
+    <a href='@Url.Action("AgregarCandidato", new{ idPartido = @ViewBag.detallePartido.IdPartido} )'>Agregar Candidato</a>
 
     </article>
 </body>

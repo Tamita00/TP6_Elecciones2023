@@ -12,7 +12,7 @@ public class HomeController : Controller
     public IActionResult VerDetallePartido(int idPartido)
     { 
         ViewBag.detallePartido = BD.VerInfoPartido(idPartido);
-        ViewBag.detalleCandidato = BD.ListarCandidatos();
+        ViewBag.detalleCandidato = BD.ListarCandidatos(idPartido);
         return View("VerDetallePartido");
     }
     public IActionResult VerDetalleCandidato(int idCandidato)
