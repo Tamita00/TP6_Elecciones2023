@@ -7,28 +7,18 @@
         </nav>
     </header>
     <article>
-    <div class = "cards">
-
-    <a href='@Url.Action("VerDetallePartido", new { idPartido = 1})'>
-    <div class="card">
-        <img src="/img/Candidatos/Massa.jpg" alt="Massa" style="width:200px">
-        <div class="container">
-            <h4><b>Frente De Todos</b></h4>
-            <p>Massa Sergio</p>
+    
+    @for (int i = 0; i < ViewBag.detallePartido.Count; i++)
+        {
+            <a href='@Url.Action("VerDetallePartido", new { idPartido = ViewBag.detallePartido[i].IdPartido})'>
+        <div class="card">
+            <img src="\img\Logos\@ViewBag.detallePartido[i].Logo" style="width:200px">
+            <div class="container">
+                <h4><b>@ViewBag.detallePartido[i].IdPartido</b></h4>
+            </div>
         </div>
-    </div>
-    </a>
+        </a>      
+        }
 
-    <a href='@Url.Action("VerDetallePartido", new { idPartido = 2})'>
-    <div class="card">
-        <img src="/img/Candidatos/Larreta.jpg" alt="Massa" style="width:200px">
-        <div class="container">
-            <h4><b>Juntos Por El Cambio</b></h4>
-            <p>Horacio Rodríguez Larreta</p>
-        </div>
-    </div>
-    </a>
-
-    </div>
     </article>
 </body>

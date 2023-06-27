@@ -6,12 +6,13 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     { 
-        ViewBag.listaPartidos = BD.ListarPartidos();
+        ViewBag.detallePartido = BD.ListarPartidos();
         return View();
     }
     public IActionResult VerDetallePartido(int idPartido)
     { 
         ViewBag.detallePartido = BD.VerInfoPartido(idPartido);
+        ViewBag.detalleCandidato = BD.ListarCandidatos();
         return View("VerDetallePartido");
     }
     public IActionResult VerDetalleCandidato(int idCandidato)
@@ -22,7 +23,7 @@ public class HomeController : Controller
     public IActionResult AgregarCandidato(int idPartido)
     { 
         ViewBag.idPartido = idPartido;
-        return View("CargarCandidato");
+        return View("AgregarCandidato");
     }
 
     [HttpPost]
@@ -31,10 +32,10 @@ public class HomeController : Controller
         BD.AgregarCandidato(candidato);
         return RedirectToAction("VerDetallePartido", new { idPartido = candidato.IdPartido});
     }
-    public IActionResult EliminarCandidato(int idCandidato, int IdPartido)
+    public IActionResult EliminarCandidato(int IdCandidato, int IdPartido)
     { 
-        BD.EliminarCandidato(idCandidato);
-        return RedirectToAction("VerDetallePartido", new { dPartido = IdPartido});
+        BD.EliminarCandidato(IdCandidato);
+        return RedirectToAction("VerDetallePartido", new { IdPartido = IdPartido});
     }
     public IActionResult Elecciones()
     { 
