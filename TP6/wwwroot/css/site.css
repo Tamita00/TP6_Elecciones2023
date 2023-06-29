@@ -28,6 +28,12 @@ nav {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.otros{
+  color:black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .partidos{
   display: flex;
   flex-wrap: wrap;
@@ -53,17 +59,17 @@ nav {
   align-items: center;
 }
 
-.container a:link, a:visited {
+.container .ono:link, .ono:visited {
   background-color: #3a60b3;
   border-radius: 5px 5px 5px 5px;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
 }
 
-.container a:hover, a:active {
+.container .ono:hover, .ono:active {
   background-color: #5175c4;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

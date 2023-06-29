@@ -1,9 +1,9 @@
 ﻿<body>
     <header>
         <nav>
-            <a href='@Url.Action("Index")'><img src="/img/banderaArg.webp" style="width:70px"></a>
-            <a href='@Url.Action("Elecciones")'>Elecciones</a>
-            <a href='@Url.Action("Creditos")'>Créditos</a>
+            <a class="otros" href='@Url.Action("Index")'><img src="/img/banderaArg.webp" style="width:70px"></a>
+            <a class="otros" href='@Url.Action("Elecciones")'>Elecciones</a>
+            <a class="otros" href='@Url.Action("Creditos")'>Créditos</a>
         </nav>
     </header>
     <article>
@@ -15,7 +15,7 @@
             <img src="\img\Logos\@ViewBag.detallePartido[i].Logo" style="width:400px">
             <div class="container">
                 <h2><b>@ViewBag.detallePartido[i].Nombre</b></h2>
-                <a href='@Url.Action("VerDetallePartido", new { idPartido = ViewBag.detallePartido[i].IdPartido})'>Ver más</a>
+                <a class ="ono" href='@Url.Action("VerDetallePartido", new { idPartido = ViewBag.detallePartido[i].IdPartido})'>Ver más</a>
             </div>
         </div>    
         }
